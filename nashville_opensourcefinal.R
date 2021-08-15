@@ -141,5 +141,20 @@ writeRaster(x = diff90_20,
             overwrite = TRUE)
 
 #### isolate areas with >= 0.15 increase in built-up area ####
+diff1990_2000[diff1990_2000<0.15] <- NA
+writeRaster(x = diff1990_2000,
+            filename="/Volumes/Backup/qgisfinal/spectralenhancements/2000hotspots.tif",
+            format = "GTiff", # save as a tif
+            overwrite = TRUE)
+diff90_10[diff90_10<0.15] <- NA
+writeRaster(x = diff90_10,
+            filename="/Volumes/Backup/qgisfinal/spectralenhancements/2010hotspots.tif",
+            format = "GTiff", # save as a tif
+            overwrite = TRUE)
+plot(diff90_10)
 diff90_20[diff90_20<0.15] <- NA
-plot(diff90_20)
+writeRaster(x = diff90_20,
+            filename="/Volumes/Backup/qgisfinal/spectralenhancements/2020hotspots.tif",
+            format = "GTiff", # save as a tif
+            overwrite = TRUE)
+
